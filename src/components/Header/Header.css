@@ -1,0 +1,110 @@
+.NoVisible {
+  display: none;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 536px;
+}
+
+.header__image {
+  width: 100%;
+  height: 536px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.header__text-container {
+  padding-top: 30px;
+  font-style: normal;
+  font-weight: 400;
+  color: #ffffff;
+  z-index: 1;
+}
+
+.header__news {
+  text-align: start;
+  font-size: 32px;
+  line-height: 40px;
+  padding-bottom: 16px;
+}
+
+.header__find {
+  font-family: "Roboto";
+  text-align: start;
+  font-size: 20px;
+  line-height: 24px;
+  padding-bottom: 98px;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    height: 400px;
+  }
+
+  .header__image {
+    width: 768;
+    height: 400px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .header__text-container {
+    padding-top: 30px;
+    padding-left: 163px;
+    z-index: 1;
+    color: #ffffff;
+  }
+
+  .header__news {
+    width: 385px;
+    text-align: start;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .header__find {
+    width: 452px;
+    font-family: "Roboto";
+    text-align: start;
+    font-size: 18px;
+    line-height: 24px;
+    padding-bottom: 48px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .header {
+    align-items: center;
+    height: 576px;
+  }
+
+  .header__text-container {
+    padding: 0;
+  }
+
+  .header__news {
+    font-family: "Roboto Slab";
+    padding-top: 80px;
+    font-size: 60px;
+    line-height: 64px;
+    width: 608px;
+  }
+
+  .header__find {
+    width: 608px;
+  }
+
+  .header__image {
+    width: 100%;
+    height: 576px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
