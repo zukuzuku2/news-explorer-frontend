@@ -1,26 +1,44 @@
 import { useForm } from "react-hook-form";
 import "./ModalWithForm.css";
 import closeButton from "../../images/close.png";
+import { useState } from "react";
+import { useAuth } from "../../utils/AuthContext";
 
-function ModalWithForm({ title }, props) {
+function ModalWithForm({ isOpen, setUser }) {
+  const auth = useAuth();
+  const [isRegistered, setIsRegistered] = useState(false);
+  function handleRegister() {
+    setIsRegistered(!isRegistered);
+  }
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = (e) => {
+    if (isRegistered) {
+      auth.login(e.email, e.password);
+    } else {
+      auth.register(e.email, e.password, e.name);
+      setIsRegistered(true);
+    }
   };
 
   return (
-    <div className="modal-form__container NoVisible">
-      <form className="modal-form NoVisible" onSubmit={handleSubmit(onSubmit)}>
-        <h3 className="modal-form__title">{`Iniciar sesión`}</h3>
+    <div className={isOpen ? "modal-form__container" : "NoVisible"}>
+      <form
+        className={isOpen ? "modal-form" : "NoVisible"}
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <h3 className="modal-form__title">
+          {isRegistered ? "Iniciar sesión" : "Inscribirse"}
+        </h3>
         <img
           className="modal-form__close"
           src={closeButton}
           alt="Imagen para cerrar modal"
+          onClick={isOpen}
         />
         <label className="modal-form__label modal-form__label_mail">
           Correo electrónico
@@ -53,7 +71,10 @@ function ModalWithForm({ title }, props) {
           placeholder="Introduce tu contraseña"
           {...register("password", { required: true })}
         />
-        {props.SignUp ? (
+        {!isRegistered ? (
+          <label className="modal-form__label">Nombre de usuario</label>
+        ) : null}
+        {!isRegistered ? (
           <input
             className="modal-form__input"
             name="name"
@@ -62,10 +83,15 @@ function ModalWithForm({ title }, props) {
           />
         ) : null}
         <button className="modal-form__button" type="submit">
-          Iniciar sesión
+          {isRegistered ? "Iniciar sesión" : "Inscribirse"}
         </button>
-        <p className="modal-form__text">
-          o <span className="modal-form__text_span">Inscribirse</span>
+        <p className="modal-form__text" onClick={handleRegister}>
+          o{" "}
+          {isRegistered ? (
+            <span className="modal-form__text_span">Inscribirse</span>
+          ) : (
+            <span className="modal-form__text_span">Inicia Sesion</span>
+          )}
         </p>
       </form>
     </div>

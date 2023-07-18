@@ -67,6 +67,10 @@
   text-align: start;
   overflow: hidden;
   text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
 }
 .card__author {
   font-style: normal;
@@ -77,11 +81,19 @@
   text-transform: uppercase;
   color: #b6bcbf;
 }
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
 @media screen and (min-width: 768px) {
   .card-container {
+    width: 100%;
     display: flex;
-    gap: 16px;
+    flex-direction: row;
+    gap: 8px;
+    flex-wrap: wrap;
   }
   .card {
     width: 224px;
@@ -123,6 +135,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 16px;
   }
 
   .card__info-container {

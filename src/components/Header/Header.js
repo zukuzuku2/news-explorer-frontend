@@ -4,7 +4,13 @@ import headerIcon from "../../images/menu.png";
 import SearchForm from "../SearchForm/SearchForm";
 import { Link } from "react-router-dom";
 
-function Header({ handleNavigation }) {
+function Header({
+  handleNavigation,
+  setCards,
+  setBusqueda,
+  setPagina,
+  busqueda,
+}) {
   return (
     <header className="header">
       <img
@@ -20,7 +26,12 @@ function Header({ handleNavigation }) {
           cuenta personal.
         </h2>
       </div>
-      <SearchForm />
+      <SearchForm
+        setCards={setCards}
+        setBusquedaEstado={setBusqueda}
+        setPagina={setPagina}
+        busqueda={busqueda}
+      />
     </header>
   );
 }

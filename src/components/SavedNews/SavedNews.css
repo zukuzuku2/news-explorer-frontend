@@ -1,8 +1,28 @@
+.saved-news__container {
+  padding: 0 16px;
+}
+
 .saved-news__description {
+  text-align: start;
 }
 
 .saved-news__title {
+  font-size: 30px;
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 34px;
+  text-align: start;
+  padding-bottom: 50px;
 }
 
 .saved-news__subtitle {
+  color: #1a1b22;
+  font-size: 18px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: start;
+  padding-bottom: 32px;
 }

@@ -2,7 +2,6 @@
   width: 100%;
   padding-top: 32px;
   margin-top: 24px;
-  height: 752px;
   background: #fff;
 }
 
@@ -25,6 +24,7 @@
 .about__paragraph-container {
   display: flex;
   flex-direction: column;
+  padding: 0 16px;
 }
 
 .about__text-container {

@@ -5,22 +5,22 @@ class Api {
     // this._header.append("Content-Type", "application/json");
   }
 
-  fetchData(categoria, requestOptions) {
+  fetchData(categoria, page, requestOptions) {
     return fetch(
-      `${this._option.url}${categoria}&lenguaje=es&apiKey=${this._option.token}`,
+      `${this._option.url}${categoria}&lenguaje=es&page=${page}&pageSize=3&apiKey=${this._option.token}`,
       requestOptions
     ).then((response) => {
       return response.json(this._option.url, categoria);
     });
   }
 
-  getCards(categoria) {
+  getCards(categoria, page = 1) {
     const requestOptions = {
       method: "GET",
       headers: this._header,
     };
 
-    return this.fetchData(categoria, requestOptions);
+    return this.fetchData(categoria, page, requestOptions);
   }
 
   //   deleteCards(id) {
