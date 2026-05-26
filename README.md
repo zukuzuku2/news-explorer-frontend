@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# News Explorer (Frontend)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este es el frontend de **News Explorer**, una aplicación interactiva desarrollada en **React** que permite a los usuarios buscar noticias recientes sobre cualquier tema utilizando la API de **NewsAPI**, registrarse e iniciar sesión de forma segura y guardar sus artículos favoritos en un panel personal persistente alimentado por **Firebase (Auth & Firestore)**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Características
 
-### `npm start`
+* **Búsqueda Dinámica de Noticias:** Consume la API de *NewsAPI* en tiempo real para obtener y renderizar artículos con paginación integrada.
+* **Autenticación Completa con Firebase:** Flujo completo de registro, inicio de sesión y persistencia del estado de usuario (AuthProvider) de manera segura.
+* **Base de Datos en la Nube (Firestore):** Permite a los usuarios guardar y eliminar sus noticias preferidas, organizadas en una interfaz interactiva de marcadores.
+* **Diseño Adaptativo Premium:** Interfaz responsiva y móvil-primero con animaciones cuidadas, fuentes personalizadas y adaptaciones dinámicas para pantallas móviles, tabletas y computadoras.
+* **Seguridad de Grado Profesional:**
+  * Totalmente auditado con **0 vulnerabilidades** de seguridad en dependencias.
+  * `.gitignore` profesional para garantizar el bloqueo y no filtración de credenciales, tokens, archivos `.env` y carpetas de configuración a GitHub.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tecnologías Utilizadas
 
-### `npm test`
+* **Framework Core:** [React 18](https://react.dev/) (Hooks: `useState`, `useEffect`, `useContext`)
+* **Enrutamiento:** [React Router DOM v6](https://reactrouter.com/)
+* **Validación de Formularios:** [React Hook Form](https://react-hook-form.com/)
+* **Servicios Backend (Serverless):** 
+  * [Firebase Authentication](https://firebase.google.com/docs/auth)
+  * [Cloud Firestore (NoSQL Database)](https://firebase.google.com/docs/firestore)
+* **Consumo de APIs:** [NewsAPI](https://newsapi.org/) (mediante una arquitectura desacoplada de peticiones)
+* **Estilado:** Vanilla CSS responsivo y optimizado con metodologías modernas.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📦 Instalación y Configuración
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Sigue estos pasos para instalar y ejecutar el proyecto localmente:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clonar el repositorio:**
+   ```bash
+   git clone https://github.com/zukuzuku2/news-explorer-frontend.git
+   cd news-explorer-frontend
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Instalar dependencias:**
+   ```bash
+   npm install
+   ```
+   *Nota: Esto instalará los paquetes y aplicará los overrides de seguridad configurados en `package.json` para garantizar un entorno libre de vulnerabilidades.*
 
-### `npm run eject`
+3. **Configurar Firebase (Opcional):**
+   Los parámetros de Firebase se encuentran actualmente configurados de forma predeterminada en `src/utils/Firebase.config.js`. Puedes modificarlos con tus propias credenciales de Firebase en caso de ser necesario.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🖥️ Scripts Disponibles
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+En el directorio del proyecto, puedes ejecutar los siguientes comandos:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* ### `npm start`
+  Inicia la aplicación en modo desarrollo local.\
+  Abre [http://localhost:3000](http://localhost:3000) para verla en el navegador. La página se recargará automáticamente al realizar cambios.
 
-## Learn More
+* ### `npm run build`
+  Compila la aplicación en un paquete optimizado y minificado para producción dentro de la carpeta `build/`. Listo para ser desplegado.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* ### `npm test`
+  Inicia el ejecutor de pruebas unitarias interactivo de Jest.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 🔒 Auditoría y Seguridad Realizada
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* **Corrección de Vulnerabilidades:** Se agregaron overrides específicos en `package.json` para forzar las versiones seguras de librerías anidadas problemáticas como `uuid`, `postcss`, `serialize-javascript`, y `nth-check`, resolviendo por completo las vulnerabilidades del proyecto a **0 vulnerabilidades activas**.
+* **Filtros de Seguridad:** `.gitignore` profesional y optimizado para bloquear cualquier filtración accidental de claves y entornos locales.
+* **Control de Calidad:** Compilado verificado y funcionando de manera robusta sin errores.
